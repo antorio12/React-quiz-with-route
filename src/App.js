@@ -1,18 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
+
+
 import Layout from './hoc/Layout/layout';
 import Quiz from './containers/quiz/quiz'
 
-
-
-function App() {
-  return (
-    <Layout>
+class App extends Component {
+  render(){
+      return (
+       
+          <Layout>
+          <Quiz />
+            </Layout>
       
-      <Quiz>
-        
-      </Quiz>
-    </Layout>
-  );
+      )
+  }
 }
 
 export default App;
