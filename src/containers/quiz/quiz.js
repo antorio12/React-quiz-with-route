@@ -9,30 +9,31 @@ class Quiz extends Component{
         isFinished:false,
         activeQuestion:0,
         answerState:null,
+        loading:true,
         quiz:[
             
-            {
-                question:'Какого цвета небо?',
-                rightAnswerId: 1,
-                id:1,
-                answers:[
-                    {text: "Синий", id:1},
-                    {text: "Красный", id:2},
-                    {text: "Оранжевый", id:3},
-                    {text: "Черный", id:4},
-                ]
-            },
-            {
-                question:'В каком году началась Вторая Мировая Война?',
-                rightAnswerId: 4,
-                id:2,
-                answers:[
-                    {text: "1918", id:1},
-                    {text: "1961", id:2},
-                    {text: "1941", id:3},
-                    {text: "1939", id:4},
-                ]
-            },
+            // {
+            //     question:'Какого цвета небо?',
+            //     rightAnswerId: 1,
+            //     id:1,
+            //     answers:[
+            //         {text: "Синий", id:1},
+            //         {text: "Красный", id:2},
+            //         {text: "Оранжевый", id:3},
+            //         {text: "Черный", id:4},
+            //     ]
+            // },
+            // {
+            //     question:'В каком году началась Вторая Мировая Война?',
+            //     rightAnswerId: 4,
+            //     id:2,
+            //     answers:[
+            //         {text: "1918", id:1},
+            //         {text: "1961", id:2},
+            //         {text: "1941", id:3},
+            //         {text: "1939", id:4},
+            //     ]
+            // },
 
         ]
     }
@@ -96,6 +97,18 @@ class Quiz extends Component{
         answerState:null
 
         })
+    }
+    async componentDidMount(){
+        try{
+            const response= await axios.get(`/quizes/${this.props.match.params.id}.json`)
+            const quiz=response.data
+            this.setState({
+                quiz,
+                loading:false
+            })
+        } catch(e){
+            console.log(e)
+        }
     }
     render(){
         return(
