@@ -3,6 +3,7 @@ import classes from './Auth.css'
 import Button from '../../components/UI/Button/button'
 import Input from '../../components/UI/Input/Input'
 import is from 'is_js'
+import axios from 'axios'
 export default class Auth extends Component {
     state = {
         isFormValid: false,
@@ -33,12 +34,32 @@ export default class Auth extends Component {
           }
         }
       }
-      loginHandler = () => {
-
+      loginHandler = async() => {
+        const authData={
+          email:this.state.formControls.email.value,
+          password: this.state.formControls.password.value,
+          returnSecureToken:true
+        }
+        try{
+        const response=axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCdc1r00Zx54kR60Ao5Yos-vLq-cUqPQjQ', authData)
+        console.log(response.data)
+      } catch(e){
+        console.log(e)
+      }
+      }
+  
+    registerHandler = async() => {
+      const authData={
+        email:this.state.formControls.email.value,
+        password: this.state.formControls.password.value,
+        returnSecureToken:true
+      }
+      try{
+      const response=axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCdc1r00Zx54kR60Ao5Yos-vLq-cUqPQjQ', authData)
+      console.log(response.data)
+    } catch(e){
+      console.log(e)
     }
-  
-    registerHandler = () => {
-  
     }
   
     submitHandler = event => {
