@@ -1,4 +1,5 @@
 import axios from '../../axios/axios-quiz'
+<<<<<<< HEAD
 
 import {FETCH_QUIZES_ERROR,
    FETCH_QUIZES_START,
@@ -7,6 +8,9 @@ import {FETCH_QUIZES_ERROR,
     QUIZ_SET_STATE,
     FINISH_QUIZ,
     QUIZ_NEXT_QUIESTION,QUIZ_RETRY} from './actionTypes'
+=======
+import {FETCH_QUIZES_ERROR, FETCH_QUIZES_START, FETCH_QUIZES_SUCCESS} from './actionTypes'
+>>>>>>> 2292d18632268ed4477212b68556a710b0676df1
 
 export function fetchQuizes() {
   return async dispatch => {
@@ -48,6 +52,7 @@ export function fetchQuizesError(e) {
     type: FETCH_QUIZES_ERROR,
     error: e
   }
+<<<<<<< HEAD
 }
 export function fetchQuizByID(quizId) {
   return async dispatch => {
@@ -131,4 +136,6 @@ export function retryQuiz(){
     type:QUIZ_RETRY,
    
   }
+=======
+>>>>>>> 2292d18632268ed4477212b68556a710b0676df1
 }
