@@ -1,23 +1,12 @@
 import React, {Component} from 'react'
 import {NavLink} from 'react-router-dom'
 import classes from './QuizList.css'
-<<<<<<< HEAD
 
 import Loader from '../../components/UI/Loader/Loader'
 import { connect } from 'react-redux'
 import {fetchQuizes} from '../../store/actions/quizAction'
  class QuizList extends Component {
  
-=======
-
-import Loader from '../../components/UI/Loader/Loader'
-import { connect } from 'react-redux'
-import {fetchQuizes} from '../../store/actions/quizAction'
- class QuizList extends Component {
-
-   
-  
->>>>>>> 2292d18632268ed4477212b68556a710b0676df1
     renderQuizes() {
       return this.props.quizes.map(quiz => {
         return (
@@ -36,7 +25,6 @@ import {fetchQuizes} from '../../store/actions/quizAction'
     //   try {
     //     const response = await axios.get('/quizes.json')
   
-<<<<<<< HEAD
     //     const quizes = []
   
     //     Object.keys(response.data).forEach((key, index) => {
@@ -46,22 +34,6 @@ import {fetchQuizes} from '../../store/actions/quizAction'
     //       })
     //     })
   
-=======
-     componentDidMount() {
-       this.props.fetchQuizes()
-    //   try {
-    //     const response = await axios.get('/quizes.json')
-  
-    //     const quizes = []
-  
-    //     Object.keys(response.data).forEach((key, index) => {
-    //       quizes.push({
-    //         id: key,
-    //         name: `Тест №${index + 1}`
-    //       })
-    //     })
-  
->>>>>>> 2292d18632268ed4477212b68556a710b0676df1
     //     this.setState({
     //       quizes, loading: false
     //     })
