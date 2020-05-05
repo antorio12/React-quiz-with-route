@@ -37,7 +37,9 @@ import {auth} from '../../store/actions/auth'
         }
       }
       loginHandler = () => {
-        this.props.auth(this.state.formControls.email.value,this.state.formControls.password.value, true)
+        this.props.auth(this.state.formControls.email.value,
+          this.state.formControls.password.value,
+           true)
       //   const authData={
       //     email:this.state.formControls.email.value,
       //     password: this.state.formControls.password.value,
@@ -52,17 +54,20 @@ import {auth} from '../../store/actions/auth'
        }
   
     registerHandler = () => {
-      const authData={
-        email:this.state.formControls.email.value,
-        password: this.state.formControls.password.value,
-        returnSecureToken:true
-      }
-      try{
-      const response= axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCdc1r00Zx54kR60Ao5Yos-vLq-cUqPQjQ', authData)
-      console.log(response.data)
-    } catch(e){
-      console.log(e)
-    }
+      this.props.auth(this.state.formControls.email.value,
+        this.state.formControls.password.value,
+         false)
+    //   const authData={
+    //     email:this.state.formControls.email.value,
+    //     password: this.state.formControls.password.value,
+    //     returnSecureToken:true
+    //   }
+    //   try{
+    //   const response= axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCdc1r00Zx54kR60Ao5Yos-vLq-cUqPQjQ', authData)
+    //   console.log(response.data)
+    // } catch(e){
+    //   console.log(e)
+    // }
     }
   
     submitHandler = event => {
