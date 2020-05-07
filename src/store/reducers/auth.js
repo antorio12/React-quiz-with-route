@@ -14,7 +14,8 @@ export default function authReducer(state=initialState, action){
                     ...state, token:null
                 }
             
-            default:return state
+            default:
+                return state
         
     }
 }
