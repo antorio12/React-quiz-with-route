@@ -5,7 +5,7 @@ import AnswerItem from './AnswerItem/AnswerItem'
 const AnswersList = props => {
   return (
     <ul className={classes.AnswersList}>
-      { props.answers.map((answer, index) => {
+      { props.answers.map((answer, index) => { //create list
         return (
           <AnswerItem
             key={index}
